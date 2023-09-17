@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Browse Games</title>
+    <link rel="stylesheet" href="../static/css/main.css" />
+    <style> td {
+  height: 80px;
+  width: 160px;
+  text-align: center;
+  vertical-align: middle;
+}</style>
+</head>
+
+<body>
+
+    <header id="header">
+        <h1>CS235 2023: My Game Library</h1>
+        <div class="copyright">&copy; UPI1 | UPI2 | UPI3 (Write your full names or UPIs)</div>
+    </header>
+
+    <h1>Total Games - {{num_games}} </h1>
+
+
+    <!-- Games table layout -->
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>TITLE</th>
+                <th>Release Date</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for game in games %}
+            <tr>
+                <td>
+                  {{game.game_id}}
+                </td>
+                <td>
+                    {{game.title}}
+                </td>
+                <td>
+                    {{game.game_url}}
+                </td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+
+</body>
+
+</html>
